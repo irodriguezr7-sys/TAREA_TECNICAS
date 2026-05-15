@@ -76,16 +76,14 @@ function opciones(ejercicioX) {
 
     } while (opcion === "2");
 }
-
+/*
 //1. Pedir el nombre del usuario y mostrar un saludo.
 function pedirNombre(){ 
 console.log("EJERCICIO 1");
 let nombre_usuario = prompt("Ingrese su nombre: ");
 
-if (nombre_usuario.trim() === "") {
-    console.log("Error: El nombre no puede estar vacío.");
-} else if (!isNaN(nombre_usuario)) { 
-    console.log("Error: El nombre no puede ser o contener números.");
+if (nombre_usuario.trim() === "" || !isNaN(nombre_usuario) ) {
+    console.log("Error: El nombre no puede estar vacío, y solo puede contener letras.");
 } else if  (!noSimbolos(nombre_usuario)) {
     console.log ("Error: no debe tener simbolos");  
 } else {
@@ -242,8 +240,8 @@ if (isNaN(monto_compra)){
 }
 opciones(ejercicio11);
 
-/*12. Solicite al usuario su edad, valide que la edad sea un número positivo y muestre la
-categoría a la que pertenece. (Niño 0 a 12 años, Joven 13 a 17, Adulto 18 en adelante)*/
+//12. Solicite al usuario su edad, valide que la edad sea un número positivo y muestre la
+//categoría a la que pertenece. (Niño 0 a 12 años, Joven 13 a 17, Adulto 18 en adelante)
 function ejercicio12(){
 console.log("\n EJERCICIO 12");
 const edad_ingresada = parseInt(prompt("Ingrese su edad: "));
@@ -263,8 +261,8 @@ if (isNaN(edad_ingresada) || edad_ingresada < 0) {
 }
 opciones(ejercicio12);
 
-/* 13. Defina un usuario y contraseña si mulando los registros de una BD. Solicite al usuario
-que por teclado ingrese un usuario y una contraseña. Presentar el usuario tiene Acceso Concedido o Denegado.*/
+// 13. Defina un usuario y contraseña si mulando los registros de una BD. Solicite al usuario
+// que por teclado ingrese un usuario y una contraseña. Presentar el usuario tiene Acceso Concedido o Denegado.
 function ejercicio13(){
 console.log("\n EJERCICIO 13");
 const usuarioBD = "admin";
@@ -282,8 +280,8 @@ if (registro_Usuario.trim() === "" || registro_Clave.trim() === "") {
 }
 opciones(ejercicio13);
 
-/* 14. Presentar un Menú con opciones básicas. Solicitar al usuario que elija una opción,
-presentar la funcionalidad seleccionada o caso contrario presentar mensaje de error. */
+//14. Presentar un Menú con opciones básicas. Solicitar al usuario que elija una opción,
+//presentar la funcionalidad seleccionada o caso contrario presentar mensaje de error.
 function ejercicio14(){
 console.log("\n EJERCICIO 14");
 console.log("MENU");
@@ -305,7 +303,7 @@ switch(opcion) {
         console.log("No te rindas");
         break;
     case 4:
-        console.log("Saliendo del programa...");
+        console.log("Saliendo del programa");
         break;
     default:
         console.log("Error: no existe esa opción.");
@@ -349,11 +347,11 @@ if (isNaN(primer_numero) || isNaN(segundo_numero) || isNaN(tercer_numero)){
 }
 opciones(ejercicio16);
 
-/*17. Un docente necesita evaluar el rendimiento de sus estudiantes. Solicite la nota de un
-estudiante (0 a 10), valide que esté dentro del rango correcto y Muestre la letra y el
-mensaje correspondiente.*/
+//17. Un docente necesita evaluar el rendimiento de sus estudiantes. Solicite la nota de un
+//estudiante (0 a 10), valide que esté dentro del rango correcto y Muestre la letra y el
+//mensaje correspondiente.
 function ejercicio17(){
-console.log("\n EJERCICIO 16");
+console.log("\n EJERCICIO 17");
 let nota_estudiante = parseFloat(prompt("Ingrese la nota del estudiante (0 - 10): "));
 if (isNaN(nota_estudiante) || (nota_estudiante<0) || (nota_estudiante>10)){
     console.log("Error, ingrese solo numeros, no dejar vacios y no pueden ser notas negativas o mayores a 10");
@@ -386,3 +384,81 @@ if (requisito_edad.trim() === "") {
 }
 }
 opciones(ejercicio18);
+
+//19. Mostrar números del 1 al 10 con for.
+function ejercicio19(){
+console.log("\n EJERCICIO 19");
+console.log("Numeros del 1 al 10:");
+for( let contador=1 ; contador<=10 ; contador++){
+ console.log (contador)
+}
+}
+opciones(ejercicio19);
+
+//20. Sumar números ingresados por el usuario hasta que el usuario ingrese 0 (while).
+function ejercicio20(){
+console.log("\nEJERCICIO 20");
+let suma = 0;
+let numero = parseInt(prompt("Ingrese un número (0 para terminar): "));
+while(numero != 0){
+if (isNaN(numero)){
+    console.log ("Ingrese solo números, no dejar vacio, no usar simbolos.")
+}
+else{
+    suma = suma + numero;
+}
+    numero = parseInt(prompt("Ingrese otro numero (0 para terminar):"));
+}
+    console.log("La suma total es:", suma);
+}
+ejercicio20();
+
+//21. Solicite al usuario ingresar un número por teclado y presente la tabla de multiplicar de ese número.
+function ejercicio21(){
+console.log("\nEJERCICIO 21");
+let numero_ingresado = parseInt(prompt("Ingrese un número para mostrar su tabla de multiplicar: "));
+let cantidad_tabla = parseInt(prompt("Ingresar hasta que cantidad de la tabla de multiplicar desea (Máximo hasta 20): "));
+
+if (isNaN(numero_ingresado) || isNaN(cantidad_tabla)){
+    console.log ("Ingrese solo números, no dejar vacio, no usar simbolos.")
+}
+else if (cantidad_tabla>20){
+    console.log("Error, la cantidad de tabla de multiplicar como máximo es hasta el número 20")
+}
+else{
+for (let contador=1; contador<=cantidad_tabla; contador++){
+console.log(`${numero_ingresado} * ${contador} = ${numero_ingresado * contador}  `);
+}
+}
+}
+opciones(ejercicio21);
+*/
+
+//22. Solicitar ingresar al usuario un valor numérico (este será la longitud de un arreglo),
+//posterior solicitar al usuario que ingrese la cantidad de valores dentro del arreglo.
+function ejercicio22(){
+console.log("\nEJERCICIO 22");
+let longitud_arreglo = parseInt(prompt("Ingrese la longitud del arreglo: "));
+    let arreglo = [];
+    if(isNaN(longitud_arreglo) || longitud_arreglo<=0 ){
+        console.log("Ingrese solo números, no dejar vacío, no usar símbolos.");
+    }
+    else{
+        for(let posicion = 0; posicion < longitud_arreglo; posicion++){
+            let valor_dentro = parseInt(prompt(`Ingrese el valor para la posición N°${posicion}:`));
+            if(isNaN(valor_dentro)){
+                console.log("Ingrese solo números.");
+            }
+            else{
+                arreglo.push(valor_dentro);
+            }
+        }
+        console.log(arreglo);
+    }
+}
+
+ejercicio22();
+
+//23. Definir un número. Solicitar al usuario que inserte un número hasta adivinar número
+//(con intentos limitados). Brindar pistas de que tan cerca está el número, si el usuario se
+//ha pasado o si está antes del valor.
