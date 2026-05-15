@@ -76,7 +76,7 @@ function opciones(ejercicioX) {
 
     } while (opcion === "2");
 }
-/*
+
 //1. Pedir el nombre del usuario y mostrar un saludo.
 function pedirNombre(){ 
 console.log("EJERCICIO 1");
@@ -432,7 +432,7 @@ console.log(`${numero_ingresado} * ${contador} = ${numero_ingresado * contador} 
 }
 }
 opciones(ejercicio21);
-*/
+
 
 //22. Solicitar ingresar al usuario un valor numérico (este será la longitud de un arreglo),
 //posterior solicitar al usuario que ingrese la cantidad de valores dentro del arreglo.
@@ -462,3 +462,76 @@ ejercicio22();
 //23. Definir un número. Solicitar al usuario que inserte un número hasta adivinar número
 //(con intentos limitados). Brindar pistas de que tan cerca está el número, si el usuario se
 //ha pasado o si está antes del valor.
+function ejercicio23(){
+console.log("\nEJERCICIO 23");
+const numero_secreto = 14;
+let intentos = 3
+while(intentos>0){
+let adivinar_numero = parseInt(prompt("Ingrese un número entre el 0-30: "));
+if (isNaN(adivinar_numero)){
+    console.log ("Ingrese solo números, no dejar vacio, no usar simbolos.")
+}
+else if((adivinar_numero < 0 || adivinar_numero > 30)){
+     console.log("Ingrese un número entre 0 y 30");
+}
+else if(adivinar_numero == numero_secreto){
+console.log("¡Adivinaste el número!");
+break;
+} 
+else if(adivinar_numero > numero_secreto){
+
+    let diferencia = adivinar_numero - numero_secreto;
+
+    if(diferencia == 1){
+
+        console.log("¡MUY cerca! Piensa un poco MENOS.");
+
+    }
+    else if(diferencia <= 3){
+
+        console.log("Algo cerca, pero todavía te pasaste.");
+
+    }
+    else{
+
+        console.log("Muy lejos, te pasaste demasiado.");
+
+    }
+
+}
+else{
+
+    let diferencia = numero_secreto - adivinar_numero;
+
+    if(diferencia == 1){
+
+        console.log("¡MUY cerca! Piensa un poco MÁS.");
+
+    }
+    else if(diferencia <= 3){
+
+        console.log("Algo cerca, pero todavía falta un poco más.");
+
+    }
+    else{
+
+        console.log("Muy lejos, te falta bastante.");
+
+    }
+
+}
+
+intentos--;
+
+console.log(`Te quedan ${intentos} intentos`);
+
+}
+
+if(intentos == 0){
+
+    console.log(`Perdiste. El número secreto era ${numero_secreto}`);
+
+}
+
+}
+opciones(ejercicio23);
