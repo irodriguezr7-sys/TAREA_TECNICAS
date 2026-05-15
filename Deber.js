@@ -479,59 +479,36 @@ console.log("¡Adivinaste el número!");
 break;
 } 
 else if(adivinar_numero > numero_secreto){
-
     let diferencia = adivinar_numero - numero_secreto;
-
     if(diferencia == 1){
-
-        console.log("¡MUY cerca! Piensa un poco MENOS.");
-
+        console.log("Muy cerca, Piensa un poco MENOS.");
     }
     else if(diferencia <= 3){
-
         console.log("Algo cerca, pero todavía te pasaste.");
-
     }
     else{
-
         console.log("Muy lejos, te pasaste demasiado.");
-
     }
-
 }
 else{
 
     let diferencia = numero_secreto - adivinar_numero;
 
     if(diferencia == 1){
-
-        console.log("¡MUY cerca! Piensa un poco MÁS.");
-
+        console.log("Muy cerca, Piensa un poco MÁS.");
     }
     else if(diferencia <= 3){
-
         console.log("Algo cerca, pero todavía falta un poco más.");
-
     }
     else{
-
         console.log("Muy lejos, te falta bastante.");
-
     }
-
 }
-
 intentos--;
-
 console.log(`Te quedan ${intentos} intentos`);
-
 }
-
 if(intentos == 0){
-
     console.log(`Perdiste. El número secreto era ${numero_secreto}`);
-
 }
-
 }
 opciones(ejercicio23);
